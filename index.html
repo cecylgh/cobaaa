@@ -11,11 +11,11 @@
     // Your access token can be found at: https://ion.cesium.com/tokens.
     // This is the default access token from your ion account
 
-    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1YTA3ZjQ3YS0zNDdiLTRmNzQtYjNkOC1hODkxNWE2NjAyMWYiLCJpZCI6MTgxNzIwLCJpYXQiOjE3MDEzMzc3MTR9.25NO3zH91PGOipVBgQb4xwsOAtXY6QwcInnGCFKHUOY';
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzZGNhODIwNS0zZTVlLTQzZTQtYTU3ZS03ZTRhY2VkN2UzODUiLCJpZCI6MTgwMDYyLCJpYXQiOjE3MDA2Njk0NDF9.L5P8OlKo0o6DkN5wooPF-LiBU-BR2W7IPWdThnG_mQU';
 
     // STEP 4 CODE (replaces steps 2 and 3)
     // Keep your `Cesium.Ion.defaultAccessToken = 'your_token_here'` line from before here. 
-    const dataPoint = { longitude: 106.79127, latitude: -6.168629057420873, height: -27.32 };
+    const dataPoint = { longitude: 106.82978011674942, latitude: -6.367364294600748, height: -27.32 };
     
     const viewer = new Cesium.Viewer('cesiumContainer', {
       terrain: Cesium.Terrain.fromWorldTerrain(),
@@ -25,12 +25,11 @@
     //viewer.scene.primitives.add(osmBuildings);
 
     const tileset = viewer.scene.primitives.add(
-    await Cesium.Cesium3DTileset.fromIonAssetId(2384271)
+    await Cesium.Cesium3DTileset.fromIonAssetId(2384574)
     );
-
-
+    
     const flightData = JSON.parse(
-      '[{"longitude":106.79131,"latitude":-6.16780,"height":40.32},{"longitude":106.79126,"latitude":-6.16711,"height":40.32},{"longitude":106.79116,"latitude":-6.16706,"height":40.32},{"longitude": 106.79097,"latitude":-6.16704,"height":40.32},{"longitude": 106.78989,"latitude":-6.16716,"height":40.32}, {"longitude": 106.78968,"latitude":-6.16720,"height":40.32},{"longitude": 106.78949,"latitude":-6.16724,"height":40.32},{"longitude": 106.78918,"latitude":-6.16738,"height":40.32},{"longitude": 106.78913,"latitude":-6.16741,"height":40.32},{"longitude": 106.78903,"latitude":-6.16745,"height":40.32},{"longitude": 106.78891,"latitude":-6.16758,"height":40.32},{"longitude": 106.78883,"latitude":-6.16774,"height":40.32},{"longitude": 106.78877,"latitude":-6.16797,"height":40.32},{"longitude":106.78867,"latitude":-6.16822,"height":40.32},{"longitude":106.78861,"latitude":-6.16849,"height":40.32},{"longitude":106.788602,"latitude":-6.16878,"height":40.32}]'
+      '[{"longitude":106.830448,"latitude": -6.368115,"height":40.32},{"longitude":106.831458,"latitude": -6.367484,"height":40.32},{"longitude":106.831339,"latitude": -6.366249,"height":40.32},{"longitude": 106.831505,"latitude": -6.365492,"height":40.32},{"longitude": 106.830878,"latitude": -6.365342,"height":40.32}, {"longitude": 106.830622,"latitude": -6.365914,"height":40.32},{"longitude": 106.830391,"latitude": -6.365444,"height":40.32},{"longitude": 106.830154,"latitude": -6.364671,"height":40.32},{"longitude": 106.829021,"latitude": -6.364836,"height":40.32},{"longitude": 106.828951,"latitude": -6.365610,"height":40.32},{"longitude": 106.827807,"latitude": -6.366469,"height":40.32},{"longitude": 106.827921,"latitude": -6.367535,"height":40.32},{"longitude": 106.828912,"latitude": -6.368019,"height":40.32},{"longitude":106.829506,"latitude": -6.368799,"height":40.32},{"longitude":106.830448,"latitude": -6.368115,"height":40.32}]'
     );
 
     /* Initialize the viewer clock:
@@ -77,7 +76,7 @@
     // STEP 6 CODE (airplane entity)
     async function loadModel() {
       // Load the glTF model from Cesium ion.
-      const airplaneUri = await Cesium.IonResource.fromAssetId(2384041);
+      const airplaneUri = await Cesium.IonResource.fromAssetId(2384637);
       const airplaneEntity = viewer.entities.add({
         availability: new Cesium.TimeIntervalCollection([ new Cesium.TimeInterval({ start: start, stop: stop }) ]),
         position: positionProperty,
